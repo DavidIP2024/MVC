@@ -17,6 +17,10 @@ public class Controller {
         return model.getVelocidad(matricula);
     }
 
+    public Coche getCoche(String matricula) {
+        return model.getCoche(matricula);
+    }
+
     public void mostrarTodosLosCoches() {
         for (Coche coche : model.getTodosLosCoches()) {
             System.out.println(coche);
