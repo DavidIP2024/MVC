@@ -9,3 +9,5 @@ public class Gasolinera {
         System.out.println("Gasolina añadida. Total: " + coche.getGasolina() + " litros.");
     }
 }
+
+

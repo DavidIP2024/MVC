@@ -6,11 +6,11 @@ public class Controller {
     }
 
     public void aumentarVelocidad(String matricula) {
-        model.cambiarVelocidad(matricula, 10); // aumenta en 10
+        model.cambiarVelocidad(matricula, 10);
     }
 
     public void disminuirVelocidad(String matricula) {
-        model.cambiarVelocidad(matricula, -10); // disminuye en 10
+        model.cambiarVelocidad(matricula, -10);
     }
 
     public int obtenerVelocidad(String matricula) {
@@ -24,6 +24,17 @@ public class Controller {
     public void mostrarTodosLosCoches() {
         for (Coche coche : model.getTodosLosCoches()) {
             System.out.println(coche);
+        }
+    }
+
+    /**
+     * Registra una alarma para un coche con matrícula dada.
+     * @param matricula matrícula del coche
+     */
+    public void registrarAlarma(String matricula) {
+        Coche coche = model.getCoche(matricula);
+        if (coche != null) {
+            coche.addGasolinaObserver(new AlarmaGasolina());
         }
     }
 }
